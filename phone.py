@@ -43,3 +43,21 @@ another_iphone.call(4692940693)
 another_iphone.open_app("Instagram")
 
 
+class Android(Phone):
+    def __init__(self, phone_number):
+        super().__init__(phone_number)
+        self.keyboard = "Default"
+
+    def __str__(self):
+        return "This phone is owned by {}".format(self.number)
+
+    def set_keyboard(self, new_keyboard):
+        self.keyboard = new_keyboard
+
+Android.ORIGIN = Android()
+josh_phone = Android(4859285734)
+josh_phone.set_keyboard("Dvorak")
+josh_phone.call(2495039682)
+josh_phone.open_app("Google Play Store")
+
+print(josh_phone)
